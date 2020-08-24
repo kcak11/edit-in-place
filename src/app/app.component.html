@@ -1,0 +1,13 @@
+<h1>Edit-in-Place Fields:</h1>
+<h4>Click on the fields below to edit.</h4>
+<h5><label><input type="checkbox" checked="checked" #deferredUpdate /> Use Deferred Update</label></h5>
+<div *ngIf="deferredUpdate.checked" class="fieldsContainer">
+  <app-eip label="Value:" propName="value" *ngFor="let val of data" [ctx]="val" [validator]="myValidator" styleClass="myCustomClass" [deferUpdate]="true"></app-eip>
+</div>
+<div *ngIf="!deferredUpdate.checked" class="fieldsContainer">
+  <app-eip label="Value:" propName="value" *ngFor="let val of data" [ctx]="val" [validator]="myValidator" styleClass="myCustomClass"></app-eip>
+</div>
+<div class="resultContainer">
+  <h2>Data Values:</h2>
+  <textarea readonly [ngClass]="{'invalid':!dataValid}">{{getData()}}</textarea>
+</div>

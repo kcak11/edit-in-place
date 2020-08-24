@@ -1,0 +1,17 @@
+<div class="viewModeDisplay" [ngClass]="styleClass" (click)="editMode()" *ngIf="mode==='view' && !error">
+  <label *ngIf="label">{{label}}</label>
+  <span>{{ctx[propName]}}</span>
+</div>
+<div class="editModeDisplay {{styleClass}}" [ngClass]="{'editModeError':errorMessage}" *ngIf="mode==='edit' && !error">
+  <label *ngIf="label">{{label}}</label>
+  <input type="text" value="{{ctx[propName]}}" #valueField [ngClass]="{'eipDeferred':deferUpdate,'eipLive':!deferUpdate,'eipValidationError':errorMessage}" (keydown)="handleKeyDown($event)" (input)="handleInput($event)" />
+  <span *ngIf="errorMessage" class="eipError">{{errorMessage}}</span>
+  <div *ngIf="deferUpdate" class="btnContainer">
+    <div class="btn saveBtn" (click)="doUpdate($event)">
+      <div>{{updateBtnTxt}}</div>
+    </div>
+    <div class="btn cancelBtn" (click)="doCancel($event)">
+      <div>{{cancelBtnTxt}}</div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,72 @@
+.viewModeDisplay {
+  cursor: pointer;
+  min-width: 5px;
+  padding: 10px;
+  box-sizing: border-box;
+  vertical-align: top;
+  position: relative;
+  &:hover {
+    opacity: 0.77;
+  }
+  span {
+    display: block;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+  }
+}
+
+.editModeDisplay {
+  padding: 10px;
+  vertical-align: top;
+  box-sizing: border-box;
+  position: relative;
+  input[type="text"] {
+    height: 30px;
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    outline: none;
+    border: 1px solid #000;
+    box-sizing: border-box;
+    &.eipLive {
+      width: calc(100% - 20px);
+    }
+    &.eipDeferred {
+      width: calc(100% - 90px);
+    }
+  }
+  .btnContainer {
+    display: inline-block;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    left: calc(100% - 62px);
+    height: 50px;
+    .btn {
+      cursor: pointer;
+      display: inline-block;
+      padding: 10px;
+      width: 30px;
+      height: 30px;
+      box-sizing: border-box;
+      border-radius: 30px;
+      margin: 0 2px;
+      background-color: #000;
+      color: #fff;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+      div {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 21.5px;
+      }
+    }
+  }
+}

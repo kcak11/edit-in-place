@@ -1,0 +1,89 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+  font-family: Verdana;
+}
+
+label {
+  cursor: pointer;
+}
+
+.fieldsContainer {
+  width: 400px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.resultContainer {
+  display: inline-block;
+  width: 350px;
+  height: 270px;
+  vertical-align: top;
+  h2 {
+    margin-top: 0;
+  }
+}
+
+textarea {
+  resize: none;
+  outline: none;
+  white-space: pre;
+  box-sizing: border-box;
+  width: calc(100% - 5px);
+  height: calc(100% + 10px);
+  background-color: #f3f3f3;
+  border: 1px solid #000;
+  padding: 5px;
+  font-size: 12px;
+  &.invalid {
+    color: #f00;
+  }
+}
+
+.myCustomClass {
+  display: inline-block;
+  &:hover {
+    background-color: #2cbbff;
+  }
+  width: 250px;
+  overflow: hidden;
+  &.viewModeDisplay {
+    height: 70px;
+    label {
+      font-size: 11px;
+      position: absolute;
+      top: 5px;
+      left: 15px;
+    }
+    span {
+      width: calc(100% - 10px);
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+  &.editModeDisplay {
+    height: 70px;
+    background-color: #2cbbff;
+    label {
+      font-size: 11px;
+      position: absolute;
+      top: 5px;
+      left: 15px;
+    }
+    &.editModeError {
+      .saveBtn {
+        opacity: 0.3;
+      }
+    }
+    .eipError {
+      color: #f00;
+      font-size: 11px;
+      position: absolute;
+      top: 52px;
+      left: 15px;
+    }
+    .eipValidationError {
+      background-color: #ffcccc;
+    }
+  }
+}
